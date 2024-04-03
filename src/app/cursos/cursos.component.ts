@@ -21,5 +21,8 @@ export class CursosComponent implements OnInit {
 
   ngOnInit() {
     this.cursos = this.cursosService.getCursos();
+
+    //Nesse caso, ele está se inscrevendo nesse Evento que é criado no Service, e será notificado quando o atributo emitir algo
+    CursosService.criouNovoCurso.subscribe((curso) => this.cursos.push(curso));
   }
 }
