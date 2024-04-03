@@ -9,10 +9,13 @@ import { CursosService } from './cursos.service';
 })
 export class CursosComponent implements OnInit {
   cursos = [];
-  cursosService: CursosService;
+  // cursosService: CursosService;
 
-  constructor() {
-    this.cursosService = new CursosService();
+  constructor(private cursosService: CursosService) {
+    // Essa é a forma sem injeção de dependências, é necessário instanciar a classe.
+    // this.cursosService = new CursosService();
+    //Essa é a forma utilizando a injeção de dependências através do construtor
+    // this.cursosService = cursoService;
   }
 
   ngOnInit() {
